@@ -6,23 +6,23 @@ from PIL import Image
 #     Generating random number
 
 i = 0
-while i < 20:
+while i < 180:
 
-    rand = random.randint(1, 3)
+    rand = random.randint(3, 7)
 
     base = Image.open("assets/base/" + str(rand) + ".png")
-    rand = random.randint(1, 2)
+    rand = random.randint(1, 1)
 
-    hair = Image.open("assets/hair/" + str(rand) + ".png")
+    hair = Image.open("assets/head/" + str(rand) + ".png")
+    rand = random.randint(1, 4)
+
+    nose = Image.open("assets/face/" + str(rand) + ".png")
     rand = random.randint(1, 3)
 
-    nose = Image.open("assets/nose/" + str(rand) + ".png")
-    rand = random.randint(1, 2)
+    mouth = Image.open("assets/body/" + str(rand) + ".png")
+    rand = random.randint(1, 3)
 
-    mouth = Image.open("assets/mouth/" + str(rand) + ".png")
-    rand = random.randint(1, 2)
-
-    eyes = Image.open("assets/eyes/" + str(rand) + ".png")
+    eyes = Image.open("assets/staff/" + str(rand) + ".png")
 
     character = base
 
@@ -36,7 +36,7 @@ while i < 20:
     (character.paste(mouth, (0,0), mouth))
 
     #Resizing and upsampling the character
-    resized_character = character.resize((1200, 1200), resample = Image.NEAREST)
+    resized_character = character.resize((1500, 1500), resample = Image.NEAREST)
     print("We made a character!")
 
     #Saving character to path
